@@ -43,7 +43,7 @@ export const AddBlog = () => {
           minLength={1}
           maxLength={1000}
           name="body"
-          rows="10"
+          rows="5"
           placeholder="Blog Body"
           value={blogBody}
           onChange={({ target: { value } }) => {
@@ -52,7 +52,7 @@ export const AddBlog = () => {
           }}
         />
         <section className="AddFormFooter">
-          <p>{charactersLeft} characters left</p>
+          <p className="lightText">{charactersLeft} characters left</p>
           <button
             className="submitButton"
             disabled={!blogTitle.length || !blogBody.length || blogBody.length > BLOG_BODY_MAX_LENGTH}

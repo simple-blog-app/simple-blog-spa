@@ -40,3 +40,9 @@
   color: white;
   border: 2px var(--dark-blue) solid;
 }
+
+.lightText {
+  font-weight: 400;
+  color: var(--gray);
+  font-style: italic;
+}
