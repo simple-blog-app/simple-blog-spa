@@ -1,9 +1,10 @@
 import { useContext, useEffect, useState } from "react";
 import "./BlogsList.css";
-import { displayToast, formatDate } from "../common";
+import { displayToast } from "../common";
 import { getAllBlogs } from "../api/BlogAPI";
 import { ToastContainer } from "react-toastify";
 import { BlogAddedtContext } from "../AddBlog/blogAddedContext";
+import { BlogCard } from "../BlogCard";
 
 export const BlogsList = () => {
   const [blogsList, setBlogsList] = useState([]);
@@ -23,23 +24,16 @@ export const BlogsList = () => {
     setBlogAdded(false);
   }, [blogAdded]);
 
-  const blogs = blogsList.map((blog) => (
-    <li className="ingredientContainer" key={blog._id}>
-      <p>{blog.title}</p>
-      <p>{blog.body}</p>
-      <p>{formatDate(blog.publishedAt)}</p>
-    </li>
-  ));
+  const blogs = blogsList.map((blog) => <BlogCard blog={blog} />);
 
   return (
-    <section className="BlogsList">
+    <section>
       {blogs.length > 0 && (
         <>
           <header>All Blogs</header>
-          <ul>{blogs}</ul>
+          <ul className="BlogsList">{blogs}</ul>
         </>
       )}
-
       <ToastContainer />
     </section>
   );

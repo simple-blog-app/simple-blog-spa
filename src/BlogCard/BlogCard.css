@@ -1,0 +1,30 @@
+@import url("../common/color-palette.css");
+
+.BlogCard {
+  border: 1px solid;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.BlogCard h1 {
+  color: var(--light-blue);
+}
+
+.normalText {
+  font-weight: normal;
+}
+
+.TextButton {
+  color: var(--light-blue);
+  text-decoration: underline;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.BlogCardFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
