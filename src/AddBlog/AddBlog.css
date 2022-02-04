@@ -1,0 +1,42 @@
+@import url("../common/color-palette.css");
+
+.AddBlog {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.AddBlog form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+}
+
+.AddBlog form textarea {
+  resize: none;
+}
+
+.AddBlog form > *:not(:last-child) {
+  padding: 5px;
+}
+
+.AddFormFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.submitButton:disabled {
+  cursor: default;
+  background-color: var(--disabled);
+}
+
+.submitButton {
+  padding: 5px 40px;
+  cursor: pointer;
+  background-color: var(--light-blue);
+  color: white;
+  border: 2px var(--dark-blue) solid;
+}

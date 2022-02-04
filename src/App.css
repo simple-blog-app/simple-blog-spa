@@ -1,4 +1,14 @@
 .App {
-  box-sizing: border-box;
-  font-size: 1.5rem;
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 0;
+}
+
+.App > * {
+  width: 40vw;
+  text-align: center;
 }

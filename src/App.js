@@ -1,7 +1,10 @@
 import "./App.css";
+import { AddBlog } from "./AddBlog";
 
-function App() {
-  return <main className="App"></main>;
-}
-
-export default App;
+export const App = () => {
+  return (
+    <main className="App">
+      <AddBlog />
+    </main>
+  );
+};
