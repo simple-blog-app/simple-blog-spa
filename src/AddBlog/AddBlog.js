@@ -1,13 +1,15 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import "./AddBlog.css";
 import { BLOG_BODY_MAX_LENGTH, displayToast } from "../common";
 import { addBlog } from "../api/BlogAPI";
 import { ToastContainer } from "react-toastify";
+import { BlogAddedtContext } from "./blogAddedContext";
 
 export const AddBlog = () => {
   const [blogTitle, setBlogTitle] = useState("");
   const [blogBody, setBlogBody] = useState("");
   const [charactersLeft, setCharactersLeft] = useState(BLOG_BODY_MAX_LENGTH - blogBody.length);
+  const { setBlogAdded } = useContext(BlogAddedtContext);
 
   const onAddBlogSubmit = async () => {
     if (!(blogTitle.length && blogBody.length)) {
@@ -19,6 +21,7 @@ export const AddBlog = () => {
       return;
     }
     const message = await addBlog(blogTitle, blogBody);
+    setBlogAdded(true);
     displayToast(message);
   };
 
@@ -52,9 +55,7 @@ export const AddBlog = () => {
           <p>{charactersLeft} characters left</p>
           <button
             className="submitButton"
-            disabled={
-              !blogTitle.length || !blogBody.length || blogBody.length > BLOG_BODY_MAX_LENGTH
-            }
+            disabled={!blogTitle.length || !blogBody.length || blogBody.length > BLOG_BODY_MAX_LENGTH}
             type="button"
             onClick={() => onAddBlogSubmit()}
           >

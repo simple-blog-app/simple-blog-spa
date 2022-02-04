@@ -12,3 +12,12 @@ export const addBlog = async (title, body) => {
     return data.error;
   }
 };
+
+export const getAllBlogs = async () => {
+  try {
+    const { data } = await axios.get(BLOGS_ENDPOINT);
+    return data;
+  } catch ({ response: { data } }) {
+    return data.error;
+  }
+};

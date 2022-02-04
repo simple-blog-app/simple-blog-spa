@@ -1,0 +1,7 @@
+@import url("../common/color-palette.css");
+
+.BlogList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
