@@ -1,7 +1,6 @@
 import "./App.css";
-import { AddBlog } from "./AddBlog";
-import { BlogsList } from "./BlogsList";
-import { BlogAddedtContext } from "./AddBlog/blogAddedContext";
+import { AddBlog, BlogsList } from "./components";
+import { BlogAddedtContext } from "./contexts";
 import { useState } from "react";
 
 export const App = () => {

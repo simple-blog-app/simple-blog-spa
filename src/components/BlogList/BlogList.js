@@ -1,9 +1,9 @@
 import { useContext, useEffect, useState } from "react";
-import "./BlogsList.css";
-import { displayToast } from "../common";
-import { getAllBlogs } from "../api/BlogAPI";
+import "./BlogList.css";
+import { displayToast } from "../../common";
+import { getAllBlogs } from "../../api";
 import { ToastContainer } from "react-toastify";
-import { BlogAddedtContext } from "../AddBlog/blogAddedContext";
+import { BlogAddedtContext } from "../../contexts";
 import { BlogCard } from "../BlogCard";
 
 export const BlogsList = () => {

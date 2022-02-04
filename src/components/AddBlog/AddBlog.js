@@ -1,9 +1,9 @@
 import { useContext, useState } from "react";
 import "./AddBlog.css";
-import { BLOG_BODY_MAX_LENGTH, displayToast } from "../common";
-import { addBlog } from "../api/BlogAPI";
+import { BLOG_BODY_MAX_LENGTH, displayToast } from "../../common";
+import { addBlog } from "../../api";
 import { ToastContainer } from "react-toastify";
-import { BlogAddedtContext } from "./blogAddedContext";
+import { BlogAddedtContext } from "../../contexts";
 
 export const AddBlog = () => {
   const [blogTitle, setBlogTitle] = useState("");

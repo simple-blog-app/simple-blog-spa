@@ -1,1 +1,1 @@
-export * from "./BlogAPI";
+export * from "./blogsAPI";

@@ -1,6 +1,6 @@
 import "./BlogCard.css";
-import { formatDate } from "../common";
-import { BlogBody } from "./BlogBody";
+import { formatDate } from "../../common";
+import { BlogBody } from "..";
 
 export const BlogCard = ({ blog: { _id, title, body, publishedAt } }) => {
   return (
