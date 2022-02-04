@@ -11,3 +11,9 @@
 .App > * {
   width: 40vw;
 }
+
+header {
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
