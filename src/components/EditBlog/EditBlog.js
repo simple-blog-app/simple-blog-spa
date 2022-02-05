@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import "./EditBlog.css";
 import { BLOG_BODY_MAX_LENGTH, displayToast } from "../../common";
-import { addBlog, editBlog } from "../../api";
+import { editBlog } from "../../api";
 import { ToastContainer } from "react-toastify";
 import { BlogAddedContext } from "../../contexts";
 
@@ -12,7 +12,7 @@ export const EditBlog = ({ blog: { _id, title, body }, setIsEditBlogModalOpen })
   const { setBlogAdded } = useContext(BlogAddedContext);
 
   const onSaveBlogSubmit = async () => {
-    if (blogTitle == title || blogBody == body) {
+    if (blogTitle == title && blogBody == body) {
       displayToast("No changes were made!");
       return;
     }
@@ -64,8 +64,7 @@ export const EditBlog = ({ blog: { _id, title, body }, setIsEditBlogModalOpen })
             type="button"
             onClick={() => onSaveBlogSubmit()}
             disabled={
-              blogTitle == title ||
-              blogBody == body ||
+              (blogTitle == title && blogBody == body) ||
               !blogTitle.length ||
               !blogBody.length ||
               blogBody.length > BLOG_BODY_MAX_LENGTH
