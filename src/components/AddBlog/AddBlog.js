@@ -3,13 +3,13 @@ import "./AddBlog.css";
 import { BLOG_BODY_MAX_LENGTH, displayToast } from "../../common";
 import { addBlog } from "../../api";
 import { ToastContainer } from "react-toastify";
-import { BlogAddedContext } from "../../contexts";
+import { BlogsChangedContext } from "../../contexts";
 
 export const AddBlog = () => {
   const [blogTitle, setBlogTitle] = useState("");
   const [blogBody, setBlogBody] = useState("");
   const [charactersLeft, setCharactersLeft] = useState(BLOG_BODY_MAX_LENGTH - blogBody.length);
-  const { setBlogAdded } = useContext(BlogAddedContext);
+  const { setBlogsChanged } = useContext(BlogsChangedContext);
 
   const onAddBlogSubmit = async () => {
     if (!(blogTitle.length || blogBody.length)) {
@@ -21,7 +21,7 @@ export const AddBlog = () => {
       return;
     }
     const message = await addBlog(blogTitle, blogBody);
-    setBlogAdded(true);
+    setBlogsChanged(true);
     setBlogTitle("");
     setBlogBody("");
     displayToast(message);

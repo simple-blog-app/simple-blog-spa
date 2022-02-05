@@ -3,13 +3,13 @@ import "./EditBlog.css";
 import { BLOG_BODY_MAX_LENGTH, displayToast } from "../../common";
 import { editBlog } from "../../api";
 import { ToastContainer } from "react-toastify";
-import { BlogAddedContext } from "../../contexts";
+import { BlogsChangedContext } from "../../contexts";
 
 export const EditBlog = ({ blog: { _id, title, body }, setIsEditBlogModalOpen }) => {
   const [blogTitle, setBlogTitle] = useState(title);
   const [blogBody, setBlogBody] = useState(body);
   const [charactersLeft, setCharactersLeft] = useState(BLOG_BODY_MAX_LENGTH - blogBody.length);
-  const { setBlogAdded } = useContext(BlogAddedContext);
+  const { setBlogsChanged } = useContext(BlogsChangedContext);
 
   const onSaveBlogSubmit = async () => {
     if (blogTitle == title && blogBody == body) {
@@ -29,7 +29,7 @@ export const EditBlog = ({ blog: { _id, title, body }, setIsEditBlogModalOpen })
       displayToast(error);
       return;
     }
-    setBlogAdded(true);
+    setBlogsChanged(true);
     setIsEditBlogModalOpen(false);
   };
 

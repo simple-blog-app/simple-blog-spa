@@ -3,13 +3,12 @@ import "./BlogList.css";
 import { displayToast } from "../../common";
 import { getAllBlogs } from "../../api";
 import { ToastContainer } from "react-toastify";
-import { BlogAddedContext, BlogDeletedContext } from "../../contexts";
+import { BlogsChangedContext } from "../../contexts";
 import { BlogCard } from "../BlogCard";
 
 export const BlogsList = () => {
   const [blogsList, setBlogsList] = useState([]);
-  const { blogAdded, setBlogAdded } = useContext(BlogAddedContext);
-  const { blogDeleted, setBlogDeleted } = useContext(BlogDeletedContext);
+  const { blogsChanged, setBlogsChanged } = useContext(BlogsChangedContext);
 
   const getBlogsList = async () => {
     const data = await getAllBlogs();
@@ -22,9 +21,8 @@ export const BlogsList = () => {
 
   useEffect(() => {
     getBlogsList();
-    setBlogAdded(false);
-    setBlogDeleted(false);
-  }, [blogAdded, blogDeleted]);
+    setBlogsChanged(false);
+  }, [blogsChanged]);
 
   const blogs = blogsList.map((blog) => <BlogCard blog={blog} />);
 

@@ -5,19 +5,19 @@ import { BlogBody } from "..";
 import { deleteBlog } from "../../api";
 import { ToastContainer } from "react-toastify";
 import { useContext, useState } from "react";
-import { BlogDeletedContext } from "../../contexts";
+import { BlogsChangedContext } from "../../contexts";
 import { EditBlog } from "../EditBlog/EditBlog";
 
 export const BlogCard = ({ blog: { _id, title, body, publishedAt } }) => {
   const [isEditBlogModalOpen, setIsEditBlogModalOpen] = useState(false);
-  const { setBlogDeleted } = useContext(BlogDeletedContext);
+  const { setBlogsChanged } = useContext(BlogsChangedContext);
 
   const onDeleteClick = async () => {
     const isConfirmed = window.confirm("Are you sure that you want to delete this blog?");
     if (!isConfirmed) return;
     const message = await deleteBlog(_id);
     displayToast(message);
-    setBlogDeleted(true);
+    setBlogsChanged(true);
   };
   return (
     <li className="BlogCard" key={_id}>
