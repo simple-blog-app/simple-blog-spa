@@ -25,8 +25,17 @@ export const getAllBlogs = async () => {
 export const deleteBlog = async (id) => {
   try {
     const { data } = await axios.delete(`${BLOGS_ENDPOINT}/${id}`);
-    return data;
+    return data.message;
   } catch ({ response: { data } }) {
     return data.error;
+  }
+};
+
+export const editBlog = async (id, updatedBlog) => {
+  try {
+    const { data } = await axios.put(`${BLOGS_ENDPOINT}/${id}`, {});
+    return data;
+  } catch ({ response: { data } }) {
+    return data;
   }
 };
