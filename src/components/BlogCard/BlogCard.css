@@ -9,6 +9,13 @@
 }
 
 .BlogCard h1 {
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.BlogCard h1 {
   color: var(--light-blue);
 }
 
