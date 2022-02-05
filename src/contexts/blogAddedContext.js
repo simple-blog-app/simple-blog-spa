@@ -1,3 +1,3 @@
 import { createContext } from "react";
 
-export const BlogAddedtContext = createContext(false);
+export const BlogAddedContext = createContext(false);

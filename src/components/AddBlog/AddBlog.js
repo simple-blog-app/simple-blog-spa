@@ -3,15 +3,16 @@ import "./AddBlog.css";
 import { BLOG_BODY_MAX_LENGTH, displayToast } from "../../common";
 import { addBlog } from "../../api";
 import { ToastContainer } from "react-toastify";
-import { BlogAddedtContext } from "../../contexts";
+import { BlogAddedContext } from "../../contexts";
 
 export const AddBlog = () => {
   const [blogTitle, setBlogTitle] = useState("");
   const [blogBody, setBlogBody] = useState("");
   const [charactersLeft, setCharactersLeft] = useState(BLOG_BODY_MAX_LENGTH - blogBody.length);
-  const { setBlogAdded } = useContext(BlogAddedtContext);
+  const { setBlogAdded } = useContext(BlogAddedContext);
 
   const onAddBlogSubmit = async () => {
+    console.log("object");
     if (!(blogTitle.length && blogBody.length)) {
       displayToast("All fields are required");
       return;

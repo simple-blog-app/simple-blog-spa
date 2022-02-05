@@ -21,3 +21,12 @@ export const getAllBlogs = async () => {
     return data.error;
   }
 };
+
+export const deleteBlog = async (id) => {
+  try {
+    const { data } = await axios.delete(`${BLOGS_ENDPOINT}/${id}`);
+    return data;
+  } catch ({ response: { data } }) {
+    return data.error;
+  }
+};
