@@ -33,7 +33,9 @@ export const deleteBlog = async (id) => {
 
 export const editBlog = async (id, updatedBlog) => {
   try {
-    const { data } = await axios.put(`${BLOGS_ENDPOINT}/${id}`, {});
+    const { data } = await axios.put(`${BLOGS_ENDPOINT}/${id}`, {
+      ...updatedBlog,
+    });
     return data;
   } catch ({ response: { data } }) {
     return data;
