@@ -12,7 +12,6 @@ export const AddBlog = () => {
   const { setBlogAdded } = useContext(BlogAddedContext);
 
   const onAddBlogSubmit = async () => {
-    console.log("object");
     if (!(blogTitle.length || blogBody.length)) {
       displayToast("All fields are required");
       return;
@@ -23,6 +22,8 @@ export const AddBlog = () => {
     }
     const message = await addBlog(blogTitle, blogBody);
     setBlogAdded(true);
+    setBlogTitle("");
+    setBlogBody("");
     displayToast(message);
   };
 
