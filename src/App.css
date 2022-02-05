@@ -9,7 +9,7 @@
 }
 
 .App > * {
-  width: 40vw;
+  width: 50vw;
 }
 
 header {
@@ -26,4 +26,8 @@ h5,
 h6,
 p {
   margin: 0;
+}
+
+p {
+  word-wrap: break-word;
 }

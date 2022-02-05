@@ -52,7 +52,7 @@ export const AddBlog = () => {
             setCharactersLeft(BLOG_BODY_MAX_LENGTH - value.length);
           }}
         />
-        <section className="AddFormFooter">
+        <footer className="AddFormFooter">
           <p className="lightText">{charactersLeft} characters left</p>
           <button
             className="submitButton"
@@ -62,7 +62,7 @@ export const AddBlog = () => {
           >
             Submit
           </button>
-        </section>
+        </footer>
       </form>
       <ToastContainer />
     </section>

@@ -2,7 +2,7 @@
 
 .BlogCard {
   border: 1px solid;
-  padding: 10px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   gap: 15px;
@@ -16,6 +16,14 @@
   font-weight: normal;
 }
 
+h1.TextButton {
+  text-decoration: none;
+}
+
+h1.TextButton:hover {
+  text-decoration: underline;
+}
+
 .TextButton {
   color: var(--light-blue);
   text-decoration: underline;
@@ -27,4 +35,5 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
