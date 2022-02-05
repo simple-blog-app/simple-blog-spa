@@ -1,4 +1,5 @@
 import ReactModal from "react-modal";
+import { Link } from "react-router-dom";
 import "./BlogCard.css";
 import { displayToast, formatDate } from "../../common";
 import { BlogBody } from "..";
@@ -21,7 +22,9 @@ export const BlogCard = ({ blog: { _id, title, body, publishedAt } }) => {
   };
   return (
     <li className="BlogCard" key={_id}>
-      <h1 className="TextButton">{title}</h1>
+      <Link to={`blog/${_id}`}>
+        <h1 className="TextButton">{title}</h1>
+      </Link>
       <BlogBody body={body} />
       <footer className="BlogCardFooter">
         <h4>

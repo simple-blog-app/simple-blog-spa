@@ -1,0 +1,42 @@
+@import url("../../common/color-palette.css");
+
+.blog a {
+  color: var(--white);
+  text-decoration: none;
+  background-color: var(--light-blue);
+  padding: 5px 10px;
+}
+
+.blog a:hover {
+  text-decoration: underline;
+}
+
+.blog {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.BlogCard h1 {
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.BlogCard h1 {
+  color: var(--light-blue);
+}
+
+.normalText {
+  font-weight: normal;
+}
+
+h1.TextButton {
+  text-decoration: none;
+}
+
+h1.TextButton:hover {
+  text-decoration: underline;
+}

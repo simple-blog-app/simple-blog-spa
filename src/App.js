@@ -1,17 +1,15 @@
 import "./App.css";
-import { AddBlog, BlogsList } from "./components";
-import { BlogsChangedContext } from "./contexts";
-import { useState } from "react";
+import { Routes, Route } from "react-router-dom";
+import { MainPage, BlogPage } from "./routes";
 
 export const App = () => {
-  const [blogsChanged, setBlogsChanged] = useState(false);
   return (
     <main className="App">
-      <BlogsChangedContext.Provider value={{ blogsChanged, setBlogsChanged }}>
-        <AddBlog />
-        <hr />
-        <BlogsList />
-      </BlogsChangedContext.Provider>
+      <Routes>
+        <Route path="/" element={<MainPage />} />
+        <Route path="/blog/:id" element={<BlogPage />} />
+        <Route path="*" element={<h1 style={{ "text-align": "center" }}>Error 404, There's nothing to do here :(</h1>} />
+      </Routes>
     </main>
   );
 };
